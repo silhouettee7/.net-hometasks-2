@@ -401,3 +401,4 @@ FodyWeavers.xsd
 # Configuration
 **/appsettings.Development.json
 **/*.Development.json=
+**/appsettings.user.json

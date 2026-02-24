@@ -7,4 +7,25 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="EmailSender" Version="1.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.3" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.3" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="appsettings.user.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="appsettings.user.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Update="HtmlTemplates\**\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>
