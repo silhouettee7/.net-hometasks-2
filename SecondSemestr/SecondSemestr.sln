@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender", "EmailSender\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9C56F883-5091-46F7-B35E-8CD50B531433}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrator", "Migrator\Migrator.csproj", "{87DD348B-7BD4-43AC-9C95-980AB9F735A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{9C56F883-5091-46F7-B35E-8CD50B531433}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C56F883-5091-46F7-B35E-8CD50B531433}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C56F883-5091-46F7-B35E-8CD50B531433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DD348B-7BD4-43AC-9C95-980AB9F735A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DD348B-7BD4-43AC-9C95-980AB9F735A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DD348B-7BD4-43AC-9C95-980AB9F735A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DD348B-7BD4-43AC-9C95-980AB9F735A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{279C2F0B-E58B-422E-A51C-98EE79D1076B} = {027F2EE3-DDAA-4DCB-80B2-86DB73EE1BB3}
