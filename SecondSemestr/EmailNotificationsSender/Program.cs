@@ -8,7 +8,7 @@ using Microsoft.Extensions.Configuration;
 var cts = new CancellationTokenSource();
 var token = cts.Token;
 
-var app = new Application()
+using var app = new Application()
     .AddConfiguration()
     .AddConsoleLogging();
 
@@ -35,7 +35,7 @@ var logger = app.GetLogger<EmailSenderService>();
 
 var emailSenderService = new EmailSenderService(options, logger);
 
-var htmlTemplate = File.ReadAllText("htmlTemplateDefault.html");
+var htmlTemplate = File.ReadAllText("HtmlTemplates/htmlTemplateDefault.html");
 
 var users = new List<User>
 {
@@ -58,7 +58,7 @@ try
     
     if (result.HasErrors)
     {
-        Console.WriteLine("Ошибки:\n");
+        Console.WriteLine("Ошибки:");
         foreach (var error in result.FailedEmails)
         {
             Console.WriteLine($"Email - {error.Key}:\n{error.Value}\n");

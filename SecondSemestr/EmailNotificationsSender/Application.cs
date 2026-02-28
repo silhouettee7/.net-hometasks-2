@@ -1,4 +1,3 @@
-using EmailSender.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -19,8 +18,11 @@ public class Application: IDisposable
         {
             return this;
         }
-        var configFileExists = File.Exists(ConfigFileName);
-        var personalConfigFileExists = File.Exists(PersonalConfigFileName);
+        var currentDirectory = Directory.GetCurrentDirectory();
+        var configFileNamePath = Path.Combine(currentDirectory, ConfigFileName);
+        var personalConfigFileNamePath = Path.Combine(currentDirectory, PersonalConfigFileName);
+        var configFileExists = File.Exists(configFileNamePath);
+        var personalConfigFileExists = File.Exists(personalConfigFileNamePath);
         if (!configFileExists && !personalConfigFileExists)
         {
             throw new FileNotFoundException("Could not find configuration file");
@@ -30,8 +32,8 @@ public class Application: IDisposable
             : ConfigFileName;
         
         var configuration = new ConfigurationBuilder()
-            .SetBasePath(Path.GetDirectoryName(currentConfigFile) ?? Directory.GetCurrentDirectory())
-            .AddJsonFile(ConfigFileName, optional: false, reloadOnChange: true)
+            .SetBasePath(currentDirectory)
+            .AddJsonFile(currentConfigFile, optional: false, reloadOnChange: true)
             .Build();
         
         Configuration = configuration;
